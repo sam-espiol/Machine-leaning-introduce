@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --text: #e0e0e0;
+      --accent: #00d8ff;
+      --card-bg: #1a1a1a;
+      --highlight: #ffe600;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--card-bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      color: var(--accent);
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -4px;
+      transition: width .3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .event {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--highlight);
+      border: 4px solid var(--bg);
+      border-radius: 50%;
+    }
+    .event h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform .6s, opacity .6s;
+    }
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+    .card-content h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: var(--highlight);
+    }
+    .card-content h3 {
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+    .card-content p {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .documents ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .documents a {
+      display: block;
+      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: background .3s;
+    }
+    .documents a:hover {
+      background: #272727;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+    @media (min-width: 768px) {
+      .event {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Machine Learning Archive</h1>
+    <nav>
+      <ul>
+        <li><a href="#history">History</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#papers">Papers</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>From Theory to Breakthroughs</h2>
+    <p>Explore the evolution of Machine Learning—from foundational algorithms to modern-day innovations driving AI today.</p>
+  </section>
+
+  <section id="history" class="section">
+    <h2>Development History</h2>
+    <div class="timeline">
+      <div class="event">
+        <h3>1950s: Birth of ML</h3>
+        <p>Alan Turing proposes the idea of learning machines. Arthur Samuel coins the term "Machine Learning" in 1959.</p>
+      </div>
+      <div class="event">
+        <h3>1980s: Neural Networks Resurge</h3>
+        <p>Backpropagation algorithm popularized, reigniting research in multi-layer perceptrons and early deep networks.</p>
+      </div>
+      <div class="event">
+        <h3>1997: Deep Blue Victory</h3>
+        <p>IBM's Deep Blue defeats world chess champion Garry Kasparov, showcasing computational power in game-playing AI.</p>
+      </div>
+      <div class="event">
+        <h3>2012: Deep Learning Breakthrough</h3>
+        <p>AlexNet wins ImageNet challenge by a large margin, accelerating deep convolutional network research.</p>
+      </div>
+      <div class="event">
+        <h3>2018–Present: Transformer Era</h3>
+        <p>"Attention Is All You Need" introduces transformers, revolutionizing NLP and enabling large language models.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="section">
+    <h2>Key Achievements</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="0X06GDPhr9gTyWpOmRrJ1goQJvE.avif" alt="CNN">
+        <div class="card-content">
+          <h4>1998</h4>
+          <h3>Convolutional Neural Networks</h3>
+          <p>Yann LeCun demonstrates CNNs for digit recognition, paving the way for modern image-based AI.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="alphago.webp" alt="RL">
+        <div class="card-content">
+          <h4>2016</h4>
+          <h3>AlphaGo</h3>
+          <p>DeepMind's AlphaGo defeats Go champion Lee Sedol, illustrating RL's potential in complex strategy games.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="unnamed.jpg" alt="Transformer">
+        <div class="card-content">
+          <h4>2020</h4>
+          <h3>GPT-3 Release</h3>
+          <p>OpenAI's GPT-3 showcases unprecedented language generation capabilities, highlighting transformer scalability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="papers" class="section documents">
+    <h2>Foundational Papers</h2>
+    <ul>
+      <li><a href="#">"Machine Learning" – Arthur Samuel, 1959</a></li>
+      <li><a href="#">"Backpropagation Through Time" – Paul Werbos, 1990</a></li>
+      <li><a href="#">"ImageNet Classification with Deep Convolutional Neural Networks" – Krizhevsky et al., 2012</a></li>
+      <li><a href="#">"Attention Is All You Need" – Vaswani et al., 2017</a></li>
+    </ul>
+  </section>
+
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const events = document.querySelectorAll('.event');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(card => observer.observe(card));
+    events.forEach(event => observer.observe(event));
+  </script>
+</body>
+</html>
